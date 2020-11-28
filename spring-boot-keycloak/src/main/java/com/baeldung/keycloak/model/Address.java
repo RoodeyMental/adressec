@@ -1,9 +1,14 @@
-package com.baeldung.keycloak;
+package com.baeldung.keycloak.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
     private String firstName;
     private String lastName;
     private String email;
+    private String id;
 
     public String getFirstName() {
         return firstName;
@@ -36,6 +41,15 @@ public class Address {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Id
+    public String getId() {
+        return id;
     }
 }
 

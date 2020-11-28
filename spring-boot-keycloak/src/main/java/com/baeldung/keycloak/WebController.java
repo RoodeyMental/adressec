@@ -1,5 +1,6 @@
 package com.baeldung.keycloak;
 
+import com.baeldung.keycloak.model.Address;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +22,9 @@ public class WebController {
     }
 
     @PostMapping("/address")
-    public void save(@ModelAttribute Address address, Model model){
+    public String save(@ModelAttribute Address address, Model model){
         System.out.println(address);
-        //return "redirect: somewhere"
+        return "index";
     }
 
 
