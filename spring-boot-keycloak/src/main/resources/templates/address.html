@@ -1,29 +1,57 @@
 <!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="layout :: headerFragment">
 </head>
-<body>
-
+<body style="background-color: lightcyan; font-family: 'Abel', sans-serif;" >
 <h2>Thank you for authenticating <span th:text="${username}">--name--</span>. You may add Adresses the secure Adressbook now.</h2>
 <form action="#" th:action="@{/address}" th:object="${address}" method="post">
-    <table>
+    <table style="margin-left: 10px">
         <tr>
-            <td><label>Firstname</label></td>
+            <td><label>First Name</label></td>
             <td><input type="text" th:field="*{firstName}" /></td>
         </tr>
         <tr>
-            <td><label>Lastname</label></td>
+            <td><label>Last Name</label></td>
             <td><input type="text" th:field="*{lastName}" /></td>
         </tr>
         <tr>
-            <td><label>E-Mail Address</label></td>
+            <td><label>E-Mail</label></td>
             <td><input type="email" th:field="*{email}" /></td>
         </tr>
         <tr>
+            <td><label>Phone Number</label></td>
+            <td><input type="number" th:field="*{phone}" /></td>
+        </tr>
+        <tr>
+            <td><label>Street</label></td>
+            <td><input type="text" th:field="*{street}" /></td>
+        </tr>
+        <tr>
+            <td><label>Postal Code</label></td>
+            <td><input type="number" th:field="*{postcode}" /></td>
+        </tr>
+        <tr>
+            <td><label>City</label></td>
+            <td><input type="text" th:field="*{city}" /></td>
+        </tr>
+        <tr>
+            <td><label>Category</label></td>
+            <td>
+                <select th:field="*{optCategory}">
+                    <option th:each="categoryOpt: ${T(com.baeldung.keycloak.Category).values()}"
+                    th:value="${categoryOpt}" th:text="${categoryOpt}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <td></td>
-            <td><input type="submit" value="Submit" /></td>
+            <td><input type="submit" value="Submit" style="font-weight: bold"/></td>
         </tr>
     </table>
+    <br>
+    <button onclick="location.href='/'" type="button">Go Back</button>
 </form>
 
 </body>

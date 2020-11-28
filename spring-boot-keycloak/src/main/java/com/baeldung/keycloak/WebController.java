@@ -23,10 +23,9 @@ public class WebController {
     }
 
     @PostMapping("/address")
-    public String save(@ModelAttribute Address address, Model model){
+    public void save(@ModelAttribute Address address, Model model){
         System.out.println(address);
         ar.save(address);
-        return "index";
     }
 
 
