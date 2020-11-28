@@ -15,8 +15,12 @@ public class WebController {
     @Autowired
     private CustomerDAO customerDAO;
 
+    @Autowired
+    private AddressRepository ar;
+
     @GetMapping("/address")
-    public String address(Model model){
+    public String address(Principal principal, Model model){
+        model.addAttribute("username", principal.getName());
         model.addAttribute("address", new Address());
         return "address";
     }
@@ -24,13 +28,15 @@ public class WebController {
     @PostMapping("/address")
     public String save(@ModelAttribute Address address, Model model){
         System.out.println(address);
+        ar.save(address);
         return "index";
     }
 
 
     @GetMapping(path = "/")
     public String index() {
-        return "external";
+        System.out.println(ar.findAll());
+        return "index";
     }
 
     @GetMapping(path = "/customers")

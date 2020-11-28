@@ -1,6 +1,8 @@
 package com.baeldung.keycloak.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -8,7 +10,10 @@ public class Address {
     private String firstName;
     private String lastName;
     private String email;
-    private String id;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
 
     public String getFirstName() {
         return firstName;
@@ -43,12 +48,11 @@ public class Address {
                 '}';
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    @Id
-    public String getId() {
+    public Long getId() {
         return id;
     }
 }

@@ -3,6 +3,8 @@
 <head th:include="layout :: headerFragment">
 </head>
 <body>
+
+<h2>Thank you for authenticating <span th:text="${username}">--name--</span>. You may add Adresses the secure Adressbook now.</h2>
 <form action="#" th:action="@{/address}" th:object="${address}" method="post">
     <table>
         <tr>
