@@ -16,7 +16,7 @@ public class WebController {
 
     @GetMapping(path = "/")
     public String index() {
-        return "external";
+        return "adress";
     }
 
     @GetMapping(path = "/customers")
