@@ -1,6 +1,4 @@
-package com.baeldung.keycloak.model;
-
-import com.baeldung.keycloak.Category;
+package edu.hm.wiesheu.markus.vssec.addressec.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

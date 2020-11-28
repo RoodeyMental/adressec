@@ -40,7 +40,7 @@
             <td><label>Category</label></td>
             <td>
                 <select th:field="*{optCategory}">
-                    <option th:each="categoryOpt: ${T(com.baeldung.keycloak.Category).values()}"
+                    <option th:each="categoryOpt: ${T(edu.hm.wiesheu.markus.vssec.addressec.model.Category).values()}"
                     th:value="${categoryOpt}" th:text="${categoryOpt}"></option>
                 </select>
             </td>

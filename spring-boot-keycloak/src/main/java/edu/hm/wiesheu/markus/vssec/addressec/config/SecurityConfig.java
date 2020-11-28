@@ -1,4 +1,4 @@
-package com.baeldung.keycloak;
+package edu.hm.wiesheu.markus.vssec.addressec.config;
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.KeycloakSecurityComponents;

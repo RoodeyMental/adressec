@@ -1,6 +1,8 @@
-package com.baeldung.keycloak;
+package edu.hm.wiesheu.markus.vssec.addressec.controller;
 
-import com.baeldung.keycloak.model.Address;
+
+import edu.hm.wiesheu.markus.vssec.addressec.model.Address;
+import edu.hm.wiesheu.markus.vssec.addressec.repository.AddressRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
