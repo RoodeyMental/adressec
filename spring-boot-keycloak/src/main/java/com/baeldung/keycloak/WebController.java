@@ -2,7 +2,7 @@ package com.baeldung.keycloak;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -14,9 +14,22 @@ public class WebController {
     @Autowired
     private CustomerDAO customerDAO;
 
+    @GetMapping("/address")
+    public String address(Model model){
+        model.addAttribute("address", new Address());
+        return "address";
+    }
+
+    @PostMapping("/address")
+    public void save(@ModelAttribute Address address, Model model){
+        System.out.println(address);
+        //return "redirect: somewhere"
+    }
+
+
     @GetMapping(path = "/")
     public String index() {
-        return "adress";
+        return "external";
     }
 
     @GetMapping(path = "/customers")
